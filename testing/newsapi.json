@@ -1,0 +1,78 @@
+https: //newsapi.org/v1/articles?source=daily-mail&sortBy=top&apiKey=69680bf6a5aa47b9ad8e25aceefafe5a
+
+    {
+        "status": "ok",
+        "source": "daily-mail",
+        "sortBy": "top",
+        "articles": [{
+            "author": "By Rod Ardehali For Mailonline",
+            "title": "Bomb blast chaos in Syria sees children fleeing for their lives",
+            "description": "Harrowing footage appearing to show a fresh Russian attack on Syria using parachute bombs have emerged online. The bomb landed in Al-Lataminah leaving children covered in debris.",
+            "url": "http://www.dailymail.co.uk/news/article-4435718/Blast-chaos-Syria-sees-children-fleeing-lives.html",
+            "urlToImage": "http://i.dailymail.co.uk/i/pix/2017/04/22/18/3F7F265700000578-0-image-a-25_1492881846326.jpg",
+            "publishedAt": "2017-04-22T20:15:25Z"
+        }, {
+            "author": "By Gerard Couzens",
+            "title": "Ferry crash on Gran Canaria hospitalises five after hitting port wall",
+            "description": "Five people have been taken to hospital after a ferry crashed off Gran Canaria. The car ferry smashed into a port wall in Las Palmas after an engine failure. Five more were treated on scene.",
+            "url": "http://www.dailymail.co.uk/news/article-4434890/Ferry-crash-Gran-Canaria-hospitalises-five.html",
+            "urlToImage": "http://i.dailymail.co.uk/i/pix/2017/04/22/12/3F7C200C00000578-0-image-a-27_1492860963180.jpg",
+            "publishedAt": "2017-04-22T19:57:37Z"
+        }, {
+            "author": "By Katie French For Mailonline",
+            "title": "Home of former Leicester manager goes up for sale",
+            "description": "Italian Claudio Ranieri (pictured), who famously led Leicester City to victory in 2016 when they won the Premier League for the first time in the club's history, has put his modest home up for sale.",
+            "url": "http://www.dailymail.co.uk/news/article-4435214/Home-former-Leicester-City-manager-goes-sale.html",
+            "urlToImage": "http://i.dailymail.co.uk/i/pix/2017/04/22/14/3F7CA69700000578-0-image-a-15_1492869143276.jpg",
+            "publishedAt": "2017-04-22T19:11:28Z"
+        }, {
+            "author": "By Abe Hawken For Mailonline",
+            "title": "Supercar smash leaves a moped rider 'seriously injured' in London",
+            "description": "Dramatic photographs from the scene in Battersea, south west London, showed the two sports cars significantly damaged and both are believed to be written off following the incident.",
+            "url": "http://www.dailymail.co.uk/news/article-4435632/Supercar-smash-leaves-moped-rider-seriously-injured.html",
+            "urlToImage": "http://i.dailymail.co.uk/i/pix/2017/04/22/19/3F7F246500000578-0-image-a-2_1492885599207.jpg",
+            "publishedAt": "2017-04-22T19:07:56Z"
+        }, {
+            "author": "By Paddy Dinham For Mailonline, Dave Burke For Mailonline and Nick Fagge In Paris For Mailonline",
+            "title": "Knife-wielding man is arrested at Paris' Gare du Nord railway station",
+            "description": "A knife-wielding man has been arrested at Paris' Gare du Nord station. It is reported that nobody has been injured in the incident.",
+            "url": "http://www.dailymail.co.uk/news/article-4435370/Knife-wielding-man-arrested-Paris.html",
+            "urlToImage": "http://i.dailymail.co.uk/i/pix/2017/04/22/16/3F7DEDEC00000578-0-image-a-84_1492873580634.jpg",
+            "publishedAt": "2017-04-22T19:00:36Z"
+        }, {
+            "author": "By Isobel Frodsham For Mailonline",
+            "title": "Beaming Queen watches as her horse wins at Newbury races",
+            "description": "Queen Elizabeth was photographed celebrating after her horse 'Call to Mind' won at the races - the day after her 91st birthday.",
+            "url": "http://www.dailymail.co.uk/news/article-4435654/Beaming-Queen-watches-horse-wins-Newbury-races.html",
+            "urlToImage": "http://i.dailymail.co.uk/i/pix/2017/04/22/18/3F7ED9B800000578-0-image-a-52_1492881138732.jpg",
+            "publishedAt": "2017-04-22T18:54:17Z"
+        }, {
+            "author": "By Tom Leonard In New York For The Daily Mail",
+            "title": "EU is ahead of Britain in trade deals, say US officials",
+            "description": "Donald Trump has 'softened' his opposition to a US-EU deal after meeting Angela Merkel. Mrs Merkel is said to have won over the President despite frosty body language.",
+            "url": "http://www.dailymail.co.uk/news/article-4434466/EU-ahead-Britain-trade-deals-say-officials.html",
+            "urlToImage": "http://i.dailymail.co.uk/i/pix/2017/04/22/01/3E602ABC00000578-0-image-a-96_1492820051221.jpg",
+            "publishedAt": "2017-04-22T18:51:03Z"
+        }, {
+            "author": "By Katie French For Mailonline",
+            "title": "It’s BOOZE Lightyear! Revellers dress as cartoons for pub crawl",
+            "description": "It seems even Disney characters get the 'Friday feeling' as dozens of familiar faces let off steam after the working week in Birmingham last night - including Toy Story star Buzz Lightyear (pictured).",
+            "url": "http://www.dailymail.co.uk/news/article-4434958/Revellers-dress-Disney-stars-huge-pub-crawl.html",
+            "urlToImage": "http://i.dailymail.co.uk/i/pix/2017/04/22/11/3F7BF19B00000578-0-image-a-79_1492858314472.jpg",
+            "publishedAt": "2017-04-22T18:47:38Z"
+        }, {
+            "author": "By Nick Fagge In Paris and Paddy Dinham For Mailonline",
+            "title": "French riot police fire tear gas in Paris clashes",
+            "description": "Just a day before the country goes to the polls in the first round of the presidential vote, masked protesters hurled flares, bottles and stones at legions of officers who flooded central Paris",
+            "url": "http://www.dailymail.co.uk/news/article-4435450/French-riot-police-fire-tear-gas-Paris-clashes.html",
+            "urlToImage": "http://i.dailymail.co.uk/i/pix/2017/04/22/17/3F7E647000000578-0-image-a-60_1492877176136.jpg",
+            "publishedAt": "2017-04-22T18:46:16Z"
+        }, {
+            "author": "By Isobel Frodsham For Mailonline",
+            "title": "Police investigate metal NEEDLES hidden in Morrisons green beans",
+            "description": "Margaret Lynch, 49, claims she found 12 needles inside beans she bought in a Glasgow shop. Sarah Parry, 41, said she found a needle inside a green bean from a shop in Manchester. Police are investigating.",
+            "url": "http://www.dailymail.co.uk/news/article-4431760/Morrisons-recall-thousands-packs-green-beans.html",
+            "urlToImage": "http://i.dailymail.co.uk/i/pix/2017/04/21/12/3F73E21400000578-0-image-a-61_1492773007934.jpg",
+            "publishedAt": "2017-04-22T18:45:06Z"
+        }]
+    }

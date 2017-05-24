@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>News Frannzy</title>
+    <link rel="shortcut icon" href="https://static01.nyt.com/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="now.css">
+    <style>
+        .resize {
+            resize: horizontal;
+            max-width: 47.3%;
+            overflow: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="logo" class="dragme">
+        </div>
+        <div id="search">
+            <fieldset id="checkNews">
+                <p>
+                    <label class="ui-button"><input type="radio"  name="theName" value="bbc-news" checked>BBC News</label>
+                    <label class="ui-button"><input type="radio"  name="theName" value="the-new-york-times" id="option-1">New York Times</label>
+                    <label class="ui-button"><input type="radio"  name="theName" value="al-jazeera-english">Al Jazeera English</label>
+                    <label class="ui-button"><input type="radio"  name="theName" value="business-insider">Business Insider</label>
+                    <label class="ui-button"><input type="radio"  name="theName" value="cnn">CNN</label>
+                </p>
+                <p>
+                    <label class="ui-button"><input type="radio"  name="theName" value="the-washington-post">The Washington Post</label>
+                    <label class="ui-button"><input type="radio"  name="theName" value="usa-today">USA Today</label>
+                    <label class="ui-button"><input type="radio"  name="theName" value="wired-de">Wired.de</label>
+                    <label class="ui-button"><input type="radio"  name="theName" value="reddit-r-all">Reddit</label>
+                </p>
+            </fieldset>
+        </div>
+        <p>
+
+        </p>
+
+        <article id="news_all"></article>
+
+        <div id="gallry_container">
+            <div id="gallery_nyt"></div>
+        </div>
+        <div id="logoS"></div>
+        <article id="gardian"></article>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="functions.js"></script>
+    <script src="now.js"></script>
+</body>
+
+</html>

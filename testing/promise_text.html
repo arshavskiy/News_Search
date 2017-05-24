@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function getByPromise(url) {
+            var p = new Promise(function (resolve, reject) {
+                $.get(url, function (data) {
+                    resolve(data);
+                });
+            });
+            return p;
+        }
+        var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+        url += '?' + $.param({
+            'api-key': "4e68f99a5f41443c9fff43f1791bb49e",
+            'q': 'news',
+            'fq': 'news_desk' + '(world)',
+            // 'begin_date': giveStartDate('YYYYMMDD'),
+            // 'end_date': giveEndDate('YYYYMMDD'),
+            'show-fields': 'all',
+            //'fields': "body,headline,snippet,lead_paragraph,web_url,byline",
+            'sort': "newest",
+            'page': 1,
+
+        });
+
+        var getFruits = getByPromise(url);
+        var getData = getByPromise('https://randomuser.me/api/?results=15');
+
+
+        Promise.all([getFruits, getData, p1, p2, p3, p4])
+            .then(function (result) {
+
+                cl(result);
+                cl(result[0].response.docs[0].headline.main)
+                return result
+            })
+
+        // .then(function (arr) {
+        //     return new Promise(function (resolve, reject) {
+        //         resolve(arr);
+        //     })
+        // })
+
+
+
+        function buildP(str) {
+            $('<p>', {
+                text: str
+            }).appendTo('body');
+        }
+
+        function cl(str) {
+            console.log(str);
+        }
+
+
+
+        var p1 = new Promise((resolve, reject) => {
+            setTimeout(resolve, 1000, 'one');
+        });
+        var p2 = new Promise((resolve, reject) => {
+            setTimeout(resolve, 2000, 'two');
+        });
+        var p3 = new Promise((resolve, reject) => {
+            setTimeout(resolve, 3000, 'three');
+        });
+        var p4 = new Promise((resolve, reject) => {
+            setTimeout(resolve, 4000, 'four');
+        });
+    </script>
+</body>
+
+</html>

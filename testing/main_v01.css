@@ -1,0 +1,421 @@
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+ ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(240, 240, 240, 1);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+ ::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255, 0, 0, 0.4);
+}
+
+div#news_container {
+    height: 1.5rem;
+    background-color: #0F0A1F;
+    cursor: pointer;
+}
+
+button#lamp_Clicker {
+    content: url('../img/lamp_d.svg');
+    width: 35px;
+    border: none;
+    /* height: 65px; */
+    /* background: url(lamp.svg) no-repeat 15px 39px fixed; */
+    position: absolute;
+    display: inline-block;
+    top: 45px;
+    left: 49px;
+    cursor: pointer;
+}
+
+button#lamp_Clicker.changed {
+    content: url('../img/lamp.svg');
+    width: 35px;
+    position: absolute;
+    display: inline-block;
+    top: 45px;
+    left: 49px;
+    cursor: pointer;
+}
+
+span#news {
+    content: url('../img/search.svg');
+    width: 44px;
+    position: absolute;
+    display: inline-block;
+    top: 45px;
+    left: 150px;
+    cursor: pointer;
+}
+
+span#search {
+    content: url('../img/news.svg');
+    width: 44px;
+    position: absolute;
+    display: inline-block;
+    top: 45px;
+    left: 100px;
+    cursor: pointer;
+}
+
+
+/* Make it a marquee */
+
+.marquee {
+    color: white;
+    display: inline-block;
+    line-height: 1.6rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-left: 100%;
+    animation: marquee 75s linear infinite;
+}
+
+
+/*.marquee:hover {
+    animation-play-state: paused
+}*/
+
+
+/* Make it move */
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+body {
+    margin: 0 auto;
+    overflow-x: hidden;
+    /*background-color: #0F0A1F;
+    color: #EEE5E6;*/
+}
+
+main {
+    margin-top: 8.6rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23898989' fill-opacity='0.16' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    background-color: #ffffff;
+    color: black;
+}
+
+#fly {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    align-content: center;
+    background-color: white;
+    padding-bottom: 0.8rem;
+    z-index: 1060;
+}
+
+div#logo {
+    background-image: url('../img/logo_n2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 4.5rem;
+}
+
+div#logoD {
+    background-image: url('../img/now_logo.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 66px;
+}
+
+.resize {
+    resize: both;
+    overflow: auto;
+    cursor: nwse-resize;
+}
+
+button#ny_click {
+    border: 1px solid deepskyblue;
+    background: none;
+    height: 19px;
+}
+
+#ny_search {
+    border-radius: 2px;
+    height: 16px;
+}
+
+#ny_search,
+button#ny_click {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    border: none;
+}
+
+div#logoS {
+    display: none;
+    background-image: url('../img/gardian_logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 5px;
+    padding: 5px 65px 10px 0px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    /* border-top: 2px solid black; */
+    max-width: 650px;
+    /* margin: 0; */
+    /* text-decoration: none; */
+    margin: 0 auto;
+}
+
+nav ul a {
+    text-decoration: none;
+}
+
+div#gallery_nyt {
+    justify-content: center;
+    padding: .5vw;
+    font-size: 0;
+    flex-flow: row wrap;
+    display: flex;
+}
+
+div#gallery_nyt div {
+    width: 100px;
+    margin: .5vw;
+}
+
+div#gallery_nyt div img:hover {
+    transform: scale(1.15);
+}
+
+div#gallery_nyt div img {
+    width: 100px;
+    height: auto;
+    transition: transform .2s ease-in-out;
+    cursor: pointer;
+}
+
+div#gallery_nyt img:hover {
+    box-shadow: 0 0 1px 1px rgba(50, 50, 50, 1);
+}
+
+article h5 {
+    transition: transform .2s ease-in-out;
+    font-size: 0.875rem;
+    font-weight: 700;
+    font-style: normal;
+    font-family: 'Open Sans', sans-serif;
+    display: inline-block;
+    width: 23.4%;
+    min-width: 21.9%;
+    padding: 0.5rem 0.3rem;
+}
+
+article h6,
+article p {
+    font-size: 0.8125rem;
+    line-height: 0.925rem;
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0;
+    display: block;
+    padding-bottom: 0.5rem;
+    padding-top: 0.6rem;
+}
+
+article {
+    margin: 0 auto;
+    max-width: 1255px;
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+article#gardian {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+article#gardian h6 p {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0;
+    display: block;
+    line-height: 1rem;
+    padding-bottom: 0rem;
+    padding-top: 0rem;
+}
+
+article#gardian h5 {
+    width: 29%;
+    cursor: pointer;
+    overflow: hidden;
+    height: 200px;
+    /* border-bottom: 1px solid rgba(0, 140, 186, 0.5); */
+    border-right: 1px solid rgba(255, 255, 186, 0.4);
+    border-radius: 10px;
+    padding: 14px;
+    margin: 4px;
+}
+
+article#gardian h5:focus,
+article#gardian h5:active,
+article#gardian h5:hover {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    animation: example 800ms forwards;
+}
+
+@keyframes example {
+    100% {
+        height: 50vh;
+        background-color: rgba(60, 220, 200, 0.1);
+    }
+}
+
+a,
+h6 a {
+    display: inline-block;
+    right: 1rem;
+    color: orange;
+}
+
+
+/*div#radio {
+    display: flex;
+    justify-content: space-around;
+}*/
+
+#checkNews {
+    color: black;
+    font-family: fantasy;
+}
+
+div#search {
+    margin: 0 auto;
+    width: 235px;
+}
+
+.right {
+    text-align: right;
+}
+
+.byline {
+    font-size: 0.6rem;
+}
+
+.gu-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.lighter {
+    font-style: normal;
+    /*background-color: #ffffff;
+    color: black;*/
+    background-color: #0F0A1F;
+    color: #EEE5E6;
+}
+
+@media only screen and (max-width: 975px) and (min-width: 667px) {
+    article h5,
+    article#gardian h5 {
+        width: 45%;
+        padding: 7px;
+        margin: 0px 0.5rem 0px 0.5rem;
+    }
+    article#gardian h5:hover {
+        transform: none;
+    }
+    article#gardian h5:focus,
+    article#gardian h5:active,
+    article#gardian h5:hover {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        animation: example 800ms forwards;
+    }
+    @keyframes example {
+        100% {
+            height: 30vh;
+            background-color: rgba(60, 220, 200, 0.1);
+        }
+    }
+}
+
+@media only screen and (max-width: 666px) {
+    article {
+        margin: 0px;
+    }
+    article h5 {
+        width: 46%;
+    }
+    article#gardian h5 {
+        width: 100%;
+        margin: 0px;
+        overflow-y: scroll;
+    }
+    article#gardian h5:hover {
+        transform: none;
+    }
+    div#logo {
+        background-image: url('../img/logo_s.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 5rem;
+    }
+    #lamp_Clicker {
+        content: url'('../img/lamp_d.svg');
+        width: 28px;
+        display: inline-block;
+        top: 52px;
+        left: 9.1px;
+        cursor: pointer;
+    }
+    #lamp_Clicker.changed {
+        content: url('../img/lamp.svg');
+        width: 28px;
+        display: inline-block;
+        top: 52px;
+        left: 9.1px;
+        cursor: pointer;
+    }
+    article#gardian h5:focus,
+    article#gardian h5:active,
+    article#gardian h5:hover {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        animation: example 800ms forwards;
+    }
+    @keyframes example {
+        100% {
+            height: 30vh;
+            background-color: rgba(60, 220, 200, 0.1);
+        }
+    }
+}

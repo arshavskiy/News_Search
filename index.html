@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>News search</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <!--<link rel="stylesheet" type="text/css" href="style/reset.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="style/tachyons.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="style/animate.css">
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <main>
+        <header>
+            <div id="news_container"></div>
+            <button id="lamp_clicker"></button>
+            <div id="logo" alt="Search News">
+                <h1>News Search</h1>
+            </div>
+            <nav id="search">
+                <input type="text" id="ny_search" value="" class="animated bounceInLeft">
+                <select id="ddlViewBy" class="animated bounceInRight">
+                        <option value="world">World</option>
+                        <option value="opinion">Opinion</option>
+                        <option value="technology">Tech</option>
+                        <option value="uk">UK</option>
+                        <option value="football">Football</option>
+                        <option value="culture" selected>Culture</option>
+                        <option value="business">Business</option>
+                        <option value="lifestyle">Lifestyle</option>
+                        <option value="fashion" >Fashion</option>
+                        <option value="environment">Environment</option>
+                    </select>
+                <button type="submit" id="ny_click" class="animated bounceInRight">Search</button>
+            </nav>
+            <nav id="page">
+                <button id='nytBtn' class="line">New York Times</button>
+                <!--<button id='gurBtn'>The Guardian</button>-->
+                <button id='newsBtn' class="line">Media News</button>
+                <button id='newsLineBtn' class="line">Business</button>
+                <button id='newsTechBtn' class="line">Tech</button>
+                <button id='newsEnterBtn' class="line">Entertainment</button>
+            </nav>
+        </header>
+
+
+        <section id="nyt"></section>
+
+        <div id="gallry_container"></div>
+        <section id="gallery_nyt"></section>
+        <section id="gardian"></section>
+
+
+        <div id="newsLineAndGallery">
+            <section id="gallery_line"></section>
+            <section id="NewslinePage"></section>
+        </div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/news_line.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

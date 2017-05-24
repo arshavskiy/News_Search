@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON</title>
+</head>
+
+<body>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var dataBase = [];
+
+        function get(url) {
+            return new Promise(function (resolve) {
+                $.get(url, function (data) {
+                    console.log(data);
+
+                    dataBase[0] = {
+                        id: data.id,
+                        name: data.name,
+                        poster: data.poster,
+                        description: data.description,
+                    };
+                    resolve();
+                });
+            });
+        }
+        get('type.json').then(function (books) {
+            // buildList(books).appendTo('body');
+        });
+    </script>
+</body>
+
+</html>
