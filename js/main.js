@@ -99,7 +99,7 @@ function buildMyNYTArticle(result) {
             // toFileTxt(headline);
             // if (result.response.docs[key].multimedia[2]) {
             //     var imageUrl = result.response.docs[key].multimedia[2].url.replace("\"", '');
-            //     imageUrl = "http://www.nytimes.com/" + imageUrl;
+            //     imageUrl = "https://www.nytimes.com/" + imageUrl;
             // }
             var type = 'nyt';
             buildArticlePost(type, box, container, headline, snippet, web_url, pub_date);
@@ -114,7 +114,7 @@ function photoGallery(result) {
         if (key < articlesNyt) {
             if (result.response.docs[key].multimedia[1]) {
                 var photo = result.response.docs[key].multimedia[1].url.replace("\"", '');
-                photoArr[key] = "http://www.nytimes.com/" + photo;
+                photoArr[key] = "https://www.nytimes.com/" + photo;
                 var web_url = result.response.docs[key].web_url.replace("\"", '');
 
                 $("<div><a href =" + web_url + "  target=\"_blank\"><img src=" + photoArr[key] + ">" + "</img></a></div>").appendTo('section#gallery_nyt');
@@ -288,11 +288,11 @@ function runNewsLinePage(newsAgr) {
 
 var page = 0;
 
-// var ip = $.getJSON('http://ipinfo.io', function (data) {
+// var ip = $.getJSON('https://ipinfo.io', function (data) {
 // });
 // runSearch(ip.responseJSON.city);
 
-$.getJSON('http://ipinfo.io', function (data) {
+$.getJSON('https://ipinfo.io', function (data) {
     runSearch(data.city);
     console.log(data.city);
 });
