@@ -12,8 +12,21 @@ function buildArticlePost(type, box, container, headline, snippet, web_url, pub_
         target: '_blank',
         title: web_url
     }).html(byline).appendTo(container);
+
     // $('<strong>').html(byline).appendTo(container);
     $("<date>").html(pub_date).appendTo(container);
+    $(container).click(function () {
+        $(this).toggleClass("selected");
+    });
+
+    $(container).on('click', e => {
+        var headline = e.currentTarget.children[0].innerText;
+        var snippet = e.currentTarget.children[1].innerText;
+        var web_url = e.currentTarget.children[2].innerText;
+        var pub_date = e.currentTarget.children[3].innerText;
+        rememberMySearchResolts(headline, snippet, web_url, pub_date);
+    });
+
 }
 
 
@@ -103,7 +116,7 @@ function buildMyNYTArticle(result) {
             // }
             var type = 'nyt';
             buildArticlePost(type, box, container, headline, snippet, web_url, pub_date);
-            rememberMySearchResolts(headline, snippet, web_url, pub_date);
+            // rememberMySearchResolts(headline, snippet, web_url, pub_date);
         }
     }
 }
