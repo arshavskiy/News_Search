@@ -18,9 +18,10 @@
 - from https://newsapi.org.
 <br>
 
-  <li>A news search feature from 2 sources : New York Time api and The Guardian(uk) api.
+  <li>A news search from New York Times api.
  <br>
  <a href="https://monotone-trays.000webhostapp.com/nyt/js/">News_Search web page</a>
  <li> Photo gallery
  <br>
+ <li> An ip location thats runs the city name in the culture section news search of NYT.
  url for testing - https://monotone-trays.000webhostapp.com/nyt/js/
