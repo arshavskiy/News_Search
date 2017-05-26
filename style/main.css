@@ -85,6 +85,7 @@ span#search {
     padding-left: 100%;
     font-family: serif;
     animation: marquee 75s linear infinite;
+    /*animation-iteration-count: infinite;*/
 }
 
 .marquee:hover {

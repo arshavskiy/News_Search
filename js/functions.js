@@ -55,7 +55,8 @@ function giveEndDate(dateF) {
 }
 
 function PrepereNewsString() {
-    return ((newsMarquee.join()).toUpperCase()).replace(/,/g, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+    return ((newsMarquee.join()).toUpperCase()).replace(/,/g, ', ' + ' ');
+    // return ((newsMarquee.join()).toUpperCase()).replace(/,/g, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp");
 }
 
 function toggleFocus(e) {

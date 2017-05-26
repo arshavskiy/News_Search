@@ -43,7 +43,10 @@ function RunMyNews(newsAgr) {
             newsMarquee[key] = headline = result.articles[key].title;
         }
         newsLine = PrepereNewsString();
-        $("<p class='marquee' " + ">" + newsLine + "</p>").appendTo('#news_container');
+        $("<p>", {
+            class: 'marquee',
+            text: newsLine,
+        }).appendTo('#news_container');
     }).fail(function (err) {
         throw err;
     });

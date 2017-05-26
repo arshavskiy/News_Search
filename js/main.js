@@ -49,7 +49,6 @@ function runSearch(search) {
     inputSubmites = $("input:last").val();
     search = search || inputSubmites;
 
-
     if (search) {
         function getByPromise(url) {
             var p = new Promise(function (resolve, reject) {
@@ -129,8 +128,15 @@ function photoGallery(result) {
                 var photo = result.response.docs[key].multimedia[1].url.replace("\"", '');
                 photoArr[key] = "https://www.nytimes.com/" + photo;
                 var web_url = result.response.docs[key].web_url.replace("\"", '');
-
-                $("<div><a href =" + web_url + "  target=\"_blank\"><img src=" + photoArr[key] + ">" + "</img></a></div>").appendTo('section#gallery_nyt');
+                $('<div>', {
+                    html: $('<a>', {
+                        href: web_url,
+                        target: "_blank",
+                        html: $('<img>', {
+                            src: photoArr[key]
+                        })
+                    })
+                }).appendTo('#gallery_nyt');
             }
         }
     }
@@ -310,6 +316,11 @@ $.getJSON('https://ipinfo.io', function (data) {
     console.log(data.city);
 });
 
+var Ip = function getIp(params) {
+    $.getJSON('https://ipinfo.io', function (data) {
+        return data.city
+    })
+}
 
 $('input#ny_search').keypress(function (e) {
     if (e.which == 13) {
