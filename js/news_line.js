@@ -22,7 +22,7 @@
     }
     var animVar = setInterval(function () {
         intervalAnimation();
-    }, 75000);
+    }, 85000);
 })();
 
 
