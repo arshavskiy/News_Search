@@ -315,15 +315,14 @@ var page = 0;
 // runSearch(ip.responseJSON.city);
 
 $.getJSON('https://ipinfo.io', function (data) {
-    runSearch(data.city);
+    if (data.city) {
+        runSearch(data.city);
+    } else {
+        runSearch()
+    }
     console.log(data.city);
 });
 
-var Ip = function getIp(params) {
-    $.getJSON('https://ipinfo.io', function (data) {
-        return data.city
-    })
-}
 
 $('input#ny_search').keypress(function (e) {
     if (e.which == 13) {
