@@ -37,6 +37,7 @@ function runSearch(search = 'gods') {
     clr('article');
     clr('#gallery_nyt div');
     clr('img');
+    $('section#nyt').show();
     if ($('#NewslinePage').children()) {
         $('#NewslinePage').children().remove();
     }
@@ -204,32 +205,32 @@ function photoGallery(result) {
 // }
 
 
-function buildMyGARrticle(result) {
-    for (var key in result.response.results) {
+// function buildMyGARrticle(result) {
+//     for (var key in result.response.results) {
 
-        var container = 'article:last';
-        var web_url = lead_paragraph = snippet = '';
-        var box = 'section#gardian';
+//         var container = 'article:last';
+//         var web_url = lead_paragraph = snippet = '';
+//         var box = 'section#gardian';
 
-        if (key < articles) {
+//         if (key < articles) {
 
-            var headline = result.response.results[key].webTitle;
-            if (result.response.results[key].blocks.body[0].bodyHtml) {
-                snippet = result.response.results[key].blocks.body[0].bodyHtml.replace("\"", '');
-            } else {
-                snippet = result.response.results[key].blocks.body[0].bodyTextSummary.replace("\"", '');
-            }
-            var web_urlS = result.response.results[key].webUrl;
-            if (result.response.results[key].webPublicationDate) {
-                date_pubS = result.response.results[key].webPublicationDate.substring(0, 10);
-            }
-            $("section#gardian").show();
-            var type = 'gur';
-            buildArticlePost(type, box, container, headline, snippet, lead_paragraph, web_url, date_pubS);
+//             var headline = result.response.results[key].webTitle;
+//             if (result.response.results[key].blocks.body[0].bodyHtml) {
+//                 snippet = result.response.results[key].blocks.body[0].bodyHtml.replace("\"", '');
+//             } else {
+//                 snippet = result.response.results[key].blocks.body[0].bodyTextSummary.replace("\"", '');
+//             }
+//             var web_urlS = result.response.results[key].webUrl;
+//             if (result.response.results[key].webPublicationDate) {
+//                 date_pubS = result.response.results[key].webPublicationDate.substring(0, 10);
+//             }
+//             $("section#gardian").show();
+//             var type = 'gur';
+//             buildArticlePost(type, box, container, headline, snippet, lead_paragraph, web_url, date_pubS);
 
-        }
-    }
-}
+//         }
+//     }
+// }
 
 function runNewsLinePage(newsAgr) {
 
@@ -239,6 +240,7 @@ function runNewsLinePage(newsAgr) {
     clr('article');
     clr('#gallery_nyt div');
     clr('img');
+    $('section#nyt').hide();
     if ($('#NewslinePage')) {
         $('#NewslinePage').children().remove();
     }
