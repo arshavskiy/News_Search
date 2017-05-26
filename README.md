@@ -20,8 +20,7 @@
 
   <li>A news search from New York Times api.
  <br>
- <a href="https://monotone-trays.000webhostapp.com/nyt/js/">News_Search web page</a>
  <li> Photo gallery
  <br>
  <li> An ip location thats runs the city name in the culture section news search of NYT.
- url for testing - https://monotone-trays.000webhostapp.com/nyt/js/
+ <br> url for testing - https://monotone-trays.000webhostapp.com/nyt/js/
