@@ -47,8 +47,9 @@ function runSearch(search = 'gods') {
     articlesNyt = 8;
 
     inputSubmites = $("input:last").val();
-    search = search || inputSubmites;
-
+    if (inputSubmites) {
+        search = inputSubmites;
+    }
     if (search) {
         function getByPromise(url) {
             var p = new Promise(function (resolve, reject) {
