@@ -1,7 +1,6 @@
 var counter = 0;
 var dataBase = [];
 
-
 function rememberMySearchResolts(headline, snippet, web_url, pub_date) {
 
     var searchWord = $("input:last").val();
