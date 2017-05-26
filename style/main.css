@@ -258,6 +258,7 @@ nav#page {
     border-top-left-radius: 11px;
     cursor: pointer;
     border-top: 2px solid red;
+    /*display: none;*/
 }
 
 #nytBtn:hover {

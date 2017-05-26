@@ -31,7 +31,7 @@ function buildArticlePost(type, box, container, headline, snippet, web_url, pub_
 
 
 
-function runSearch(search) {
+function runSearch(search = 'gods') {
     // var date = giveNowDate();
 
     clr('article');
