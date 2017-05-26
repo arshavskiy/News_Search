@@ -1,6 +1,6 @@
 #A simple NYT and Guardian api news search
 <br>
-<h3>Currently has 3 features</h3>
+<h3>Currently has 4 features</h3>
 <ol>
   <li>The news running line of selected news agencies ':
   <br>
