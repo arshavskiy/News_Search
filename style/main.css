@@ -609,6 +609,7 @@ color: black;*/
         left: 9.1px;
         cursor: pointer;
         border: none;
+        display: none;
     }
     #lamp_clicker.changed {
         background-image: url('../img/lamp.svg');
