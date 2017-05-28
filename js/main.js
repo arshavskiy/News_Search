@@ -3,7 +3,12 @@ function buildArticlePost(type, box, container, headline, snippet, web_url, pub_
     // if (imageUrl) {
     //     $('article:last').css('background-image', 'url(' + imageUrl + ')');
     // }
-    $("<h2>").html(headline).appendTo(container);
+    $('<h2>', {
+        html: $('<span>', {
+            text: headline,
+        })
+    }).appendTo(container);
+
     if (snippet) {
         $("<p>").html(snippet).appendTo(container);
     }
