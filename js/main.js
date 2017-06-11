@@ -329,6 +329,8 @@ $.getJSON('https://ipinfo.io', function (data) {
 
 }).error(function () {
     runSearch()
+}).fail(function () {
+    runSearch();
 });
 
 
