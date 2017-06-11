@@ -253,9 +253,9 @@ function runNewsLinePage(newsAgr) {
     var counter = 1;
     var photoArrNewsLine = [];
 
-    for (var index = 0; index < newsAgr.length; index++) {
+    for (var i = 0; i < newsAgr.length; i++) {
 
-        let newsAgr2 = newsAgr[index];
+        let newsAgr2 = newsAgr[i];
 
         var url = "https://newsapi.org/v1/articles";
         url += '?' + $.param({
@@ -326,6 +326,9 @@ $.getJSON('https://ipinfo.io', function (data) {
         runSearch()
     }
     console.log(data.city);
+
+}).error(function () {
+    runSearch()
 });
 
 

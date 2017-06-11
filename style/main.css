@@ -128,7 +128,7 @@ header {
     align-content: center;
     background-color: white;
     /*padding-bottom: 0.8rem;*/
-    z-index: 1060;
+    z-index: 10;
 }
 
 div#logo {
@@ -527,6 +527,17 @@ nav#search {
 color: black;*/
     background-color: #0F0A1F;
     color: #EEE5E6;
+}
+
+aside {
+    position: absolute;
+    top: 1.4rem;
+    left: 0;
+    width: 150px;
+    height: 100%;
+    background-color: black;
+    display: none;
+    /*z-index: 11;*/
 }
 
 
