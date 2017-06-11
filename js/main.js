@@ -327,8 +327,6 @@ $.getJSON('https://ipinfo.io', function (data) {
     }
     console.log(data.city);
 
-}).error(function () {
-    runSearch()
 }).fail(function () {
     runSearch();
 });
