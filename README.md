@@ -23,4 +23,4 @@
  <li> Photo gallery
  <br>
  <li> An ip location thats runs the city name in the culture section news search of NYT.
- <br> url for testing - https://arshavskiy.github.io/News_Search/.
+ <br> url for testing - https://monotone-trays.000webhostapp.com/nyt/js/ or https://arshavskiy.github.io/News_Search/ 
