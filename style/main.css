@@ -565,6 +565,9 @@ aside {
     section article {
         width: 45%;
     }
+     .line {
+        padding: 0px 0px;
+    }
     section#gardian article:hover {
         transform: none;
     }
