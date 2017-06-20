@@ -349,10 +349,10 @@ $('#ny_click').on('click', function () {
     runSearch();
 });
 
-$('#gurBtn').on('click', function () {
-    // runSearch();
-    QueryGardian();
-});
+// $('#gurBtn').on('click', function () {
+//     // runSearch();
+//     QueryGardian();
+// });
 
 // $('#nextGur').on('click', function () {
 //     QueryGardian();
