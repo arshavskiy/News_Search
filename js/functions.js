@@ -1,46 +1,4 @@
-/*
-function keyUp() {
 
-    $("input")
-        .keyup(function() {
-            var value = $(this).val();
-            $("p").text(value);
-        }).keyup();
-}
-
-
-function toFileTxt(url) {
-    result = JSON.stringify(url);
-    $.post('post.php', { 'data': result }, function(data) { //{ 'data': "\'" + result + "\'" }
-
-        $.get('get.php', function(data) {
-            if (data) {
-                console.log("file done");
-            }
-        });
-    });
-}
-
-
-
-countChecked();
-$("input[type=checkbox]").on("click", countChecked);
-
-
-function move(el) {
-
-    $(el).draggable();
-    $(el).resizable();
-}
-
-
-function selected(event) {
-    var elm = $(event.target);
-    console.log(elm);
-    elm.toggleClass('selected');
-}
-
-*/
 
 function giveStartDate(dateF) {
     EndDate = moment().subtract(365, "days").format(dateF);
