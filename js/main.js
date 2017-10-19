@@ -1,8 +1,5 @@
 function buildArticlePost(type, box, container, headline, snippet, web_url, pub_date) {
     $('<article>').addClass(type).appendTo(box);
-    // if (imageUrl) {
-    //     $('article:last').css('background-image', 'url(' + imageUrl + ')');
-    // }
     $('<h2>', {
         html: $('<span>', {
             text: headline,
@@ -17,8 +14,7 @@ function buildArticlePost(type, box, container, headline, snippet, web_url, pub_
         target: '_blank',
         title: web_url
     }).html(byline).appendTo(container);
-
-    // $('<strong>').html(byline).appendTo(container);
+ 
     $("<date>").html(pub_date).appendTo(container);
     $(container).click(function () {
         $(this).toggleClass("selected");
@@ -37,7 +33,6 @@ function buildArticlePost(type, box, container, headline, snippet, web_url, pub_
 
 
 function runSearch(search = 'gods') {
-    // var date = giveNowDate();
 
     clr('article');
     clr('#gallery_nyt div');
@@ -115,14 +110,9 @@ function buildMyNYTArticle(result) {
             if (result.response.docs[key].byline) {
                 byline = result.response.docs[key].byline.original;
             }
-            // toFileTxt(headline);
-            // if (result.response.docs[key].multimedia[2]) {
-            //     var imageUrl = result.response.docs[key].multimedia[2].url.replace("\"", '');
-            //     imageUrl = "https://www.nytimes.com/" + imageUrl;
-            // }
-            var type = 'nyt';
+                    var type = 'nyt';
             buildArticlePost(type, box, container, headline, snippet, web_url, pub_date);
-            // rememberMySearchResolts(headline, snippet, web_url, pub_date);
+          
         }
     }
 }
@@ -149,93 +139,6 @@ function photoGallery(result) {
     }
 }
 
-
-
-// function QueryGardian(search) {
-
-//     $('#nextNyt').hide();
-
-//     clr('article');
-//     clr('#gallery_nyt div');
-//     clr('img');
-//     if ($('#NewslinePage').children()) {
-//         $('#NewslinePage').children().remove();
-//     }
-
-//     search = $("input:last").val();
-//     console.log(search);
-//     strUser = $("#ddlViewBy :selected").val();
-
-//     function getByPromise(url) {
-//         var p = new Promise(function (resolve, reject) {
-//             $.get(url, function (data) {
-//                 resolve(data);
-//             });
-//         });
-//         return p;
-//     }
-
-//     var url = "https://content.guardianapis.com/search";
-//     url += '?' + $.param({
-//         'section': strUser,
-//         'q': search,
-//         'show-fields': 'body',
-//         'order-by': 'relevance',
-//         // if relevance is off 
-//         // 'from-date': giveStartDate('YYYY-MM-DD'),
-//         // 'to-date': giveEndDate('YYYY-MM-DD'),
-//         'show-blocks': 'all',
-//         'api-key': "cc07d679-218e-41ce-aadf-90792e934171"
-
-//     });
-
-//     $.ajax({
-//         url: url,
-//         method: 'GET',
-//     }).done(function (result) {
-
-//         buildMyGARrticle(result);
-
-//         // TODO animation fade in
-//         // x = document.querySelectorAll("h2");
-//         // $(x[0]).fadeIn();
-//         // $("h5").addClass('animated swing');
-
-
-//         // move('.resize');
-
-//     }).fail(function (err) {
-//         throw err;
-//     });
-// }
-
-
-// function buildMyGARrticle(result) {
-//     for (var key in result.response.results) {
-
-//         var container = 'article:last';
-//         var web_url = lead_paragraph = snippet = '';
-//         var box = 'section#gardian';
-
-//         if (key < articles) {
-
-//             var headline = result.response.results[key].webTitle;
-//             if (result.response.results[key].blocks.body[0].bodyHtml) {
-//                 snippet = result.response.results[key].blocks.body[0].bodyHtml.replace("\"", '');
-//             } else {
-//                 snippet = result.response.results[key].blocks.body[0].bodyTextSummary.replace("\"", '');
-//             }
-//             var web_urlS = result.response.results[key].webUrl;
-//             if (result.response.results[key].webPublicationDate) {
-//                 date_pubS = result.response.results[key].webPublicationDate.substring(0, 10);
-//             }
-//             $("section#gardian").show();
-//             var type = 'gur';
-//             buildArticlePost(type, box, container, headline, snippet, lead_paragraph, web_url, date_pubS);
-
-//         }
-//     }
-// }
 
 function runNewsLinePage(newsAgr) {
 
@@ -301,8 +204,6 @@ function runNewsLinePage(newsAgr) {
                     class: 'gallery_line_img',
                 }).appendTo('#gallery_line');
 
-                // $("<a href =" + urlLink + "  target=\"_blank\"><img src=" + newsLinePhoto + ">" + "</img></a>").appendTo('#gallery_line');
-
                 counter++;
             }
 
@@ -314,10 +215,6 @@ function runNewsLinePage(newsAgr) {
 }
 
 var page = 0;
-
-// var ip = $.getJSON('https://ipinfo.io', function (data) {
-// });
-// runSearch(ip.responseJSON.city);
 
 $.getJSON('https://ipinfo.io', function (data) {
     if (data.city) {
@@ -335,8 +232,6 @@ $.getJSON('https://ipinfo.io', function (data) {
 $('input#ny_search').keypress(function (e) {
     if (e.which == 13) {
         runSearch();
-        // QueryGardian();
-
     }
 });
 
@@ -348,16 +243,6 @@ $('#nytBtn').on('click', function () {
 $('#ny_click').on('click', function () {
     runSearch();
 });
-
-// $('#gurBtn').on('click', function () {
-//     // runSearch();
-//     QueryGardian();
-// });
-
-// $('#nextGur').on('click', function () {
-//     QueryGardian();
-// });
-
 
 $('<button>', {
     text: 'next',
