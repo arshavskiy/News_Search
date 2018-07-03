@@ -301,7 +301,6 @@ $('#newsEnterBtn').on('click', function () {
     runNewsLinePage(newsAgrArrayPage);
 });
 
-
 $("section#gardian h5").hover(function () {
     $(this).css("background-color", "darkmagenta");
 });
