@@ -80,9 +80,10 @@ function runSearch(search = 'gods') {
         Promise.all([getTimesData])
             .then(function (result) {
                 page++;
-
-                buildMyNYTArticle(result[0]);
-                photoGallery(result[0]);
+                if (result.response.docs.length){
+                    buildMyNYTArticle(result[0]);
+                    photoGallery(result[0]);
+                } else (runSearch());
 
                 if ($("input:last").val()) {
                     $('#nextNyt').show();
