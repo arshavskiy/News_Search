@@ -64,7 +64,7 @@ function runSearch(search = 'gods') {
 
         var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
         url += '?' + $.param({
-            'api-key': "4e68f99a5f41443c9fff43f1791bb49e",
+            'api-key': "XwUT5JobKB82XW1ipcB6t85trGj1Y8HE",
             'q': search,
             'fq': 'news_desk' + '(' + strUser + ')',
             'begin_date': giveStartDate('YYYYMMDD'),
