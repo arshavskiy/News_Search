@@ -67,7 +67,7 @@ function runSearch(search = 'gods') {
 
         let url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
         url += '?' + $.param({
-            'api-key': "4e68f99a5f41443c9fff43f1791bb49e",
+            'api-key': "XwUT5JobKB82XW1ipcB6t85trGj1Y8HE",
             'q': search,
             'fq': 'news_desk' + '(' + strUser + ')',
             'begin_date': giveStartDate('YYYYMMDD'),
@@ -84,9 +84,10 @@ function runSearch(search = 'gods') {
         Promise.all([getTimesData])
             .then(function (result) {
                 page++;
-
-                buildMyNYTArticle(result[0]);
-                photoGallery(result[0]);
+                if (result[0].response.docs.length){
+                    buildMyNYTArticle(result[0]);
+                    photoGallery(result[0]);
+                } else (runSearch());
 
                 if ($("input:last").val()) {
                     $('#nextNyt').show();
@@ -312,7 +313,6 @@ $('#newsEnterBtn').on('click', function () {
     ];
     runNewsLinePage(newsAgrArrayPage);
 });
-
 
 $("section#gardian h5").hover(function () {
     $(this).css("background-color", "darkmagenta");
