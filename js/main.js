@@ -105,7 +105,7 @@ function buildMyNYTArticle(result) {
         let web_url;
         let pub_date;
         let type = 'nyt';
-        let photo;
+        let img;
 
         if (key < articlesNyt) {
             let headline = result.response.docs[key].headline.main;
