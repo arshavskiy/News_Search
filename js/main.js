@@ -1,5 +1,7 @@
 function buildArticlePost(type, box, container, headline, snippet, web_url, pub_date, img) {
     $('<article>').addClass(type).appendTo(box);
+    img  = img || '';
+
     $('img', { 
         src : img
     }).appendTo(container);
