@@ -1,6 +1,6 @@
 function buildArticlePost(type, box, container, headline, snippet, web_url, pub_date, img) {
     $('<article>').addClass(type).appendTo(box);
-    img  = img || '';
+    img  = "https://www.nytimes.com/"+ img || '';
 
     $('img', { 
         src : img
