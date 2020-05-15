@@ -1,10 +1,12 @@
 function buildArticlePost(type, box, container, headline, snippet, web_url, pub_date, img) {
     $('<article>').addClass(type).appendTo(box);
-    img  = "https://www.nytimes.com/"+ img || '';
+    if (img) {
+        img = "https://www.nytimes.com/" + img;
+        $('<img>', {
+            src: img
+        }).appendTo(container);
+    }
 
-    $('img', { 
-        src : img
-    }).appendTo(container);
     $('<h2>', {
         html: $('<span>', {
             text: headline,
@@ -65,7 +67,7 @@ function runSearch(search = 'gods') {
         search = inputSubmites;
     }
     if (search) {
-       
+
 
         let url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
         url += '?' + $.param({
@@ -86,10 +88,10 @@ function runSearch(search = 'gods') {
         Promise.all([getTimesData])
             .then(function (result) {
                 page++;
-                if (result[0].response.docs.length){
+                if (result[0].response.docs.length) {
                     buildMyNYTArticle(result[0]);
                     photoGallery(result[0]);
-                } else (runSearch());
+                } else(runSearch());
 
                 if ($("input:last").val()) {
                     $('#nextNyt').show();
@@ -122,7 +124,7 @@ function buildMyNYTArticle(result) {
             if (result.response.docs[key].byline) {
                 byline = result.response.docs[key].byline.original;
             }
-            
+
             if (result.response.docs[key].multimedia[1]) {
                 img = result.response.docs[key].multimedia[1].url.replace("\"", '');
             }
