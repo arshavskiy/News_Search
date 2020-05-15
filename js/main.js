@@ -1,5 +1,8 @@
-function buildArticlePost(type, box, container, headline, snippet, web_url, pub_date) {
+function buildArticlePost(type, box, container, headline, snippet, web_url, pub_date, img) {
     $('<article>').addClass(type).appendTo(box);
+    $('img', { 
+        src : img
+    }).appendTo(container);
     $('<h2>', {
         html: $('<span>', {
             text: headline,
@@ -14,23 +17,31 @@ function buildArticlePost(type, box, container, headline, snippet, web_url, pub_
         target: '_blank',
         title: web_url
     }).html(byline).appendTo(container);
- 
+
     $("<date>").html(pub_date).appendTo(container);
     $(container).click(function () {
         $(this).toggleClass("selected");
     });
 
     $(container).on('click', e => {
-        var headline = e.currentTarget.children[0].innerText;
-        var snippet = e.currentTarget.children[1].innerText;
-        var web_url = e.currentTarget.children[2].innerText;
-        var pub_date = e.currentTarget.children[3].innerText;
+        let headline = e.currentTarget.children[0].innerText;
+        let snippet = e.currentTarget.children[1].innerText;
+        let web_url = e.currentTarget.children[2].innerText;
+        let pub_date = e.currentTarget.children[3].innerText;
         rememberMySearchResolts(headline, snippet, web_url, pub_date);
     });
 
 }
 
-
+function getByPromise(url) {
+    let p = new Promise(function (resolve, reject) {
+        $.get(url, function (data) {
+            resolve(data);
+            console.log(search + ' in ' + strUser);
+        });
+    });
+    return p;
+}
 
 function runSearch(search = 'gods') {
 
@@ -52,17 +63,9 @@ function runSearch(search = 'gods') {
         search = inputSubmites;
     }
     if (search) {
-        function getByPromise(url) {
-            var p = new Promise(function (resolve, reject) {
-                $.get(url, function (data) {
-                    resolve(data);
-                    console.log(search + ' in ' + strUser);
-                });
-            });
-            return p;
-        }
+       
 
-        var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+        let url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
         url += '?' + $.param({
             'api-key': "4e68f99a5f41443c9fff43f1791bb49e",
             'q': search,
@@ -76,7 +79,8 @@ function runSearch(search = 'gods') {
 
         });
 
-        var getTimesData = getByPromise(url);
+        let getTimesData = getByPromise(url);
+
         Promise.all([getTimesData])
             .then(function (result) {
                 page++;
@@ -87,44 +91,53 @@ function runSearch(search = 'gods') {
                 if ($("input:last").val()) {
                     $('#nextNyt').show();
                 }
-            })
+            });
     }
 }
 
 function buildMyNYTArticle(result) {
-    for (var key in result.response.docs) {
+    for (let key in result.response.docs) {
 
-        var container = 'article:last';
-        var box = 'section#nyt';
+        let container = 'article:last';
+        let box = 'section#nyt';
+        let snippet;
+        let web_url;
+        let pub_date;
+        let type = 'nyt';
+        let photo;
 
         if (key < articlesNyt) {
-            var headline = result.response.docs[key].headline.main;
+            let headline = result.response.docs[key].headline.main;
             if (result.response.docs[key].snippet) {
-                var snippet = result.response.docs[key].snippet;
+                snippet = result.response.docs[key].snippet;
             } else {
-                var snippet = result.response.docs[key].lead_paragraph;
+                nippet = result.response.docs[key].lead_paragraph;
             }
-            var web_url = result.response.docs[key].web_url.replace("\"", '');
-            var pub_date = result.response.docs[key].pub_date.substring(0, 10);
+            web_url = result.response.docs[key].web_url.replace("\"", '');
+            pub_date = result.response.docs[key].pub_date.substring(0, 10);
 
             if (result.response.docs[key].byline) {
                 byline = result.response.docs[key].byline.original;
             }
-                    var type = 'nyt';
-            buildArticlePost(type, box, container, headline, snippet, web_url, pub_date);
-          
+            
+            if (result.response.docs[key].multimedia[1]) {
+                img = result.response.docs[key].multimedia[1].url.replace("\"", '');
+            }
+
+            buildArticlePost(type, box, container, headline, snippet, web_url, pub_date, img);
+
         }
     }
 }
 
 function photoGallery(result) {
     photoArr = [];
-    for (key in result.response.docs) {
+    for (let key in result.response.docs) {
         if (key < articlesNyt) {
             if (result.response.docs[key].multimedia[1]) {
-                var photo = result.response.docs[key].multimedia[1].url.replace("\"", '');
+                let photo = result.response.docs[key].multimedia[1].url.replace("\"", '');
                 photoArr[key] = "https://www.nytimes.com/" + photo;
-                var web_url = result.response.docs[key].web_url.replace("\"", '');
+                let web_url = result.response.docs[key].web_url.replace("\"", '');
                 $('<div>', {
                     html: $('<a>', {
                         href: web_url,
@@ -153,14 +166,14 @@ function runNewsLinePage(newsAgr) {
         $('#NewslinePage').children().remove();
     }
 
-    var counter = 1;
-    var photoArrNewsLine = [];
+    let counter = 1;
+    let photoArrNewsLine = [];
 
-    for (var i = 0; i < newsAgr.length; i++) {
+    for (let i = 0; i < newsAgr.length; i++) {
 
         let newsAgr2 = newsAgr[i];
 
-        var url = "https://newsapi.org/v1/articles";
+        let url = "https://newsapi.org/v1/articles";
         url += '?' + $.param({
             'source': newsAgr2,
             'sortBy': 'top',
@@ -172,16 +185,16 @@ function runNewsLinePage(newsAgr) {
         }).done(function (result) {
             $('<h5>').html(newsAgr2.toUpperCase()).addClass('news_name').appendTo('#NewslinePage');
 
-            for (var key in result.articles) {
+            for (let key in result.articles) {
 
-                var newsLinePage = result.articles[key].title;
-                var newsLinePhoto = result.articles[key].urlToImage;
-                var newsLinedescription = result.articles[key].description;
-                var urlLink = result.articles[key].url;
+                let newsLinePage = result.articles[key].title;
+                let newsLinePhoto = result.articles[key].urlToImage;
+                let newsLinedescription = result.articles[key].description;
+                let urlLink = result.articles[key].url;
                 photoArrNewsLine[key] = newsLinePhoto;
 
                 if (newsLinePhoto) {
-                    var newsLinePhoto = newsLinePhoto.replace("\"", '');
+                    let newsLinePhoto = newsLinePhoto.replace("\"", '');
                 }
 
                 $("<h2>", {
@@ -214,7 +227,7 @@ function runNewsLinePage(newsAgr) {
     }
 }
 
-var page = 0;
+let page = 0;
 
 $.getJSON('https://ipinfo.io', function (data) {
     if (data.city) {
