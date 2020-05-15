@@ -199,7 +199,7 @@ function runNewsLinePage(newsAgr) {
                 photoArrNewsLine[key] = newsLinePhoto;
 
                 if (newsLinePhoto) {
-                    let newsLinePhoto = newsLinePhoto.replace("\"", '');
+                    newsLinePhoto = newsLinePhoto.replace("\"", '');
                 }
 
                 $("<h2>", {

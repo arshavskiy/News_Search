@@ -577,6 +577,7 @@ aside {
 @media only screen and (max-width: 975px) and (min-width: 667px) {
     section article {
         width: 45%;
+        min-height: 250px;
     }
      .line {
         padding: 0px 0px;
