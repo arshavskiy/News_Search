@@ -125,8 +125,8 @@ function buildMyNYTArticle(result) {
                 byline = result.response.docs[key].byline.original;
             }
 
-            if (result.response.docs[key].multimedia[1]) {
-                img = result.response.docs[key].multimedia[1].url.replace("\"", '');
+            if (result.response.docs[key].multimedia.length) {
+                img = result.response.docs[key].multimedia[4].url.replace("\"", '');
             }
 
             buildArticlePost(type, box, container, headline, snippet, web_url, pub_date, img);
