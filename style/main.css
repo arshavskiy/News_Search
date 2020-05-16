@@ -279,10 +279,11 @@ section#nyt a {
 }
 
 section#nyt {
-    border-left: 1px solid;
-    border-top: 1px solid;
-    padding-left: 5px;
-    /*display: none;*/
+    /* border-left: 1px solid; */
+    /* border-top: 1px solid; */
+    /* padding-left: 5px; */
+    /* display: none; */
+    background: #333;
 }
 
 section#gallery_nyt {
