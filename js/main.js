@@ -90,7 +90,7 @@ function runSearch(search = 'gods') {
                 page++;
                 if (result[0].response.docs.length) {
                     buildMyNYTArticle(result[0]);
-                    photoGallery(result[0]);
+                    // photoGallery(result[0]);
                 } else(runSearch());
 
                 if ($("input:last").val()) {
